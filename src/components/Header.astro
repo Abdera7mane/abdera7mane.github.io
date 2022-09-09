@@ -1,0 +1,214 @@
+---
+const discordTag = "Abdera7mane#8910";
+---
+
+<header>
+	<nav>
+		<ul class="nav-links">
+			<li><a href="#about">About</a></li>
+			<li><a href="#projects">Projects</a></li>
+		</ul>
+		<ul class="social-links">
+			<li>
+				<a id="github" class="social-icon" href="https://github.com/Abdera7mane" target="_blank"></a>
+			</li>
+			<li>
+				<a id="discord" class="social-icon"></a>
+				<span class="discord-tag" id="tag-popup">{discordTag}</span>
+			</li>
+		</ul>
+	</nav>
+
+	<section class="header-content">
+		<img class="logo" src="assets/logo.svg" height="200" width="200">
+		<div class="about" id="about">
+			<p>
+				I am a <span class="text-gradient">graphic designer</span>
+				and <span class="text-gradient">software developer</span>
+				with a passion.
+			</p>
+		</div>
+	</section>
+</header>
+
+<style>
+:root {
+	--header-background: linear-gradient(180deg, black 0%, transparent 100%);
+	--link-color: white;
+	--link-hover-color: #ffd60a;
+}
+
+header {
+	width: 100%;
+	background: var(--header-background);
+	padding-bottom: 64px;
+}
+
+ul {
+	padding: 0;
+}
+
+.nav-links,
+.social-links {
+	display: flex;
+	margin: auto;
+	padding-top: 16px;
+	justify-content: center;
+}
+
+.nav-links li,
+.social-links li {
+	display: inline-block;
+}
+
+.nav-links a,
+.social-links a {
+	display: block;
+	padding: 15px 30px;
+	line-height: 32px;
+	color: var(--link-color);
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	transition: color 600ms;
+}
+
+.nav-links a:hover,
+.social-links a:hover {
+	color: var(--link-hover-color);
+}
+
+.about {
+	font-size: 20px;
+	height: 200px;
+	margin: 0 40px;
+	text-align: justify;
+	text-justify: inter-word;
+	display: flex;
+	justify-content: center;
+}
+
+.about p {
+	max-width: 500px;
+	font-weight: 900;
+}
+
+.header-content {
+	margin-top: 32px;
+	clear: both;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+	animation: glow 2s ease-in-out forwards infinite alternate;
+}
+
+@keyframes glow {
+	0% {
+		filter: drop-shadow(0px -16px 96px #ffc400a8);
+	}
+	100% {
+		filter: drop-shadow(0px 48px 128px #ffc400da);
+	}
+}
+
+.social-icon {
+	padding: 0 !important;
+	min-width: 32px;
+	min-height: 32px;
+	background-size: 32px;
+	filter: brightness(1.0) sepia(1) hue-rotate(0) saturate(0);
+	transition: filter 600ms;
+	margin: 16px 24px;
+}
+
+.social-icon:hover {
+	filter: brightness(1.0) sepia(1) hue-rotate(-50deg) saturate(96);
+}
+
+#github {
+	background-image: url(assets/icons/github.svg);
+}
+
+#discord {
+	background-image: url(assets/icons/discord.svg);
+	cursor: pointer;
+}
+
+
+.discord-tag {
+	color: black;
+	font-size: 12px;
+	padding: 6px;
+	border-radius: 8px;
+	background-color: white;
+	position: absolute;
+	opacity: 0.0;
+	top: 154px;
+	transition-property: opacity, top;
+	transition-duration: 500ms;
+}
+
+.discord-tag:before {
+    content: '';
+	border-style: solid;
+	border-width: 0px 5px 0px 5px;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    left: 34px;
+	top: 0px;
+	transition-property: border-bottom-width, top;
+	transition-duration: 600ms;
+}
+
+#discord:hover + .discord-tag {
+	opacity: 1.0;
+	top: 160px;
+}
+
+#discord:hover + .discord-tag:before {
+	border-bottom-width: 10px;
+	top: -5px;
+}
+
+@media only screen and (min-width : 800px) {
+	.about {
+		font-size: 32px;
+	}
+
+	.nav-links {
+		float: right;
+		margin-right: 80px;
+	}
+
+	.social-links {
+		float: left;
+		margin-left: 80px;
+		padding-left: 30px;
+	}
+
+	.discord-tag{
+		top: 64px;
+
+	}
+
+	#discord:hover + .discord-tag {
+		top: 80px;
+	}
+}
+</style>
+
+<script define:vars={{ discordTag }}>
+let discord = document.getElementById("discord");
+let tagPopup = document.getElementById("tag-popup");
+
+discord?.addEventListener('mouseover', () => {
+	tagPopup.innerHTML = discordTag
+});
+
+discord?.addEventListener('click', () => {
+	navigator.clipboard.writeText(discordTag);
+	tagPopup.innerHTML = "Copied to clipboard !"
+});
+</script>

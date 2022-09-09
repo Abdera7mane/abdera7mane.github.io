@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Abdera7mane's profile">
+	<main>
+		<h1 id="projects">My projects</h1>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://github.com/Abdera7mane/cordot"
+				title="Cordot"
+				icon="assets/projects/cordot/icon.png"
+				body="Discord API wrapper for Godot Engine written in GDScript language."
+			/>
+			<Card
+				href="https://github.com/Abdera7mane/godot-buildpack"
+				title="Godot buildpack"
+				icon="assets/projects/godot-buildpack/icon.png"
+				body="Cloud Native Buildpack for Godot projects."
+			/>
+			<Card
+				href="https://github.com/Abdera7mane/godot-project-statistics"
+				title="Godot project statistics"
+				icon="assets/projects/godot-project-statistics/icon.png"
+				body="Display code base statistics of a Godot project."
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+h1 {
+	margin: 2rem 0;
+}
+
+main {
+	margin: auto;
+	padding: 1em;
+	max-width: 720px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.instructions {
+	line-height: 1.6;
+	margin: 1rem 0;
+	background: #4f39fa;
+	padding: 1rem;
+	border-radius: 0.4rem;
+	color: var(--color-bg);
+}
+
+.instructions code {
+	font-size: 0.875em;
+	border: 0.1em solid var(--color-border);
+	border-radius: 4px;
+	padding: 0.15em 0.25em;
+}
+
+.link-card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+	gap: 1rem;
+	padding: 0;
+}
+</style>
