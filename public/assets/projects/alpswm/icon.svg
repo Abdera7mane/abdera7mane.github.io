@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64.000008"
+   height="63.999947"
+   viewBox="0 0 16.933335 16.933319"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="portfolio.svg"
+   inkscape:export-filename="logo_frame.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="79.195959"
+     inkscape:cy="1400.0714"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="1280"
+     inkscape:window-y="40"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g20467"
+     showguides="false" /><defs
+     id="defs2"><linearGradient
+       inkscape:collect="always"
+       id="linearGradient18016"><stop
+         style="stop-color:#3771c8;stop-opacity:1;"
+         offset="0"
+         id="stop18012" /><stop
+         style="stop-color:#80b3ff;stop-opacity:1"
+         offset="1"
+         id="stop18014" /></linearGradient><inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect17708"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,0.25,0,1 @ F,0,1,1,0,0.25,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0.25"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" /><inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect17706"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,1,1,0,0.25,0,1 @ F,0,1,1,0,0.25,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0.25"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" /><linearGradient
+       id="linearGradient3279"
+       inkscape:swatch="solid"><stop
+         style="stop-color:#e8adad;stop-opacity:1;"
+         offset="0"
+         id="stop3277" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient18016"
+       id="linearGradient18548"
+       gradientUnits="userSpaceOnUse"
+       x1="228.54729"
+       y1="268.81668"
+       x2="239.13062"
+       y2="268.81668"
+       gradientTransform="translate(1.111252)" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient18016"
+       id="linearGradient18550"
+       gradientUnits="userSpaceOnUse"
+       x1="228.54729"
+       y1="268.81668"
+       x2="239.13062"
+       y2="268.81668"
+       gradientTransform="translate(1.111252)" /></defs><g
+     inkscape:label="Portfolio"
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:highlight-color="#ffffff"
+     transform="translate(-226.48334,-260.35)"><g
+       id="g20467"
+       inkscape:label="ProjectSection"
+       style="display:inline"
+       inkscape:highlight-color="#ffffff"><g
+         id="g19213"
+         inkscape:label="Card3"
+         inkscape:highlight-color="#477085"
+         style="display:inline"><g
+           id="g19218"
+           inkscape:label="Thumbnail"
+           inkscape:export-filename="../../.local/share/containers/storage/volumes/soyshit/_data/abdera7mane.github.io/public/assets/projects/alpswm/icon.svg"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96"><rect
+             style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             id="rect7211"
+             width="16.933332"
+             height="16.933332"
+             x="226.48334"
+             y="260.35001"
+             rx="2.1166666"
+             ry="2.1166666" /><path
+             id="rect7643"
+             style="fill:url(#linearGradient18548);fill-opacity:1;stroke:none;stroke-width:0.794228;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 239.99187,267.22865 h -10.08333 a 0.25,0.25 135 0 0 -0.25,0.25 v 4.51301 c 0,1.17264 0.94403,2.11667 2.11667,2.11667 h 6.35 c 1.17263,0 2.11666,-0.94403 2.11666,-2.11667 v -4.51301 a 0.25,0.25 45 0 0 -0.25,-0.25 z"
+             inkscape:original-d="m 240.24187,267.22865 h -10.58333 v 4.76301 c 0,1.17264 0.94403,2.11667 2.11667,2.11667 h 6.35 c 1.17263,0 2.11666,-0.94403 2.11666,-2.11667 z"
+             inkscape:path-effect="#path-effect17706" /><path
+             id="path17424"
+             style="fill:url(#linearGradient18550);fill-opacity:1;stroke:none;stroke-width:0.794228;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 231.77521,263.525 c -1.17264,0 -2.11667,0.94403 -2.11667,2.11666 v 0.27814 a 0.25,0.25 45 0 0 0.25,0.25 h 10.08333 a 0.25,0.25 135 0 0 0.25,-0.25 v -0.27814 c 0,-1.17263 -0.94403,-2.11666 -2.11666,-2.11666 z"
+             inkscape:path-effect="#path-effect17708"
+             inkscape:original-d="m 231.77521,263.525 c -1.17264,0 -2.11667,0.94403 -2.11667,2.11666 v 0.52814 h 10.58333 v -0.52814 c 0,-1.17263 -0.94403,-2.11666 -2.11666,-2.11666 z" /></g></g></g></g><style
+     type="text/css"
+     id="style26">
+	.specularity {opacity:0.5;}
+	.low-specularity {opacity:0.25;}
+	.full-specularity {opacity:1;}
+	.black {fill:#000000;}
+	.white {fill:#ffffff;}
+	.outline-big {stroke-width:16;stroke:none;opacity:0.1;fill:none;}
+	.outline-small {stroke-width:8;stroke:none;opacity:0.2;fill:none;}
+	.stroke-highlight {fill:none;stroke:none;opacity:0.2;}
+       	.base-shadow 	{fill:black;opacity:75;}
+	</style></svg>

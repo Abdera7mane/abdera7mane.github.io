@@ -4,26 +4,150 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+  wip: boolean;
 }
 
-const { href, title, body, icon } = Astro.props as Props;
+const { href, title, body, icon, wip } = Astro.props as Props;
 ---
 
 <li class="link-card">
-	<a href={href} target="_blank">
-		<div class="header">
-			<img src={icon} height="64" width="64">
-			<h3>{title}</h3>
-		</div>
-		<p>{body}</p>
-	</a>
+  <!-- Ugly but whatever -->
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+  <a class="mouse-position-tracker" href={href} target="_blank"/>
+
+  <div class="card-button">
+    <div class="card-content">
+      <div class="header">
+        <img src={icon} height="64" width="64">
+        <h3 class="title">{title}{wip && <span class="wip">WIP</span>}</h3>
+        
+        <div class="title-wrapper">
+        </div>
+      </div>
+      <p>{body}</p>
+    </div>
+  </a>
 </li>
 
 <style>
 :root {
-	--card-background: #0a0908;
+  --link-hover-color: white;
+	--card-background: hsla(0, 0%, 10%, 60%);
+	--card-background-alternate: hsla(0, 0%, 10%, 40%);
+	--card-outline: #242424;
 	--card-shadow: 0px -28px 46px -42px var(--link-hover-color);
 	--card-inner-shadow: 0px 64px 60px -33px var(--link-hover-color) inset;
+}
+
+.link-card {
+  position: relative;
+  display: grid;
+	width: 320px;
+  min-height: 200px;
+  list-style: none;
+  transition: all 200ms ease-out;
+}
+
+h3, p {
+  color: hsl(0, 0% , 70%);
+}
+
+.link-card:hover {
+  transform: scale(105%);
+}
+
+.mouse-position-tracker {
+  position: absolute;
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  z-index: 1;
+
+}
+
+.mouse-position-tracker:nth-child(3n - 2) {
+  left: 0;
+}
+
+.mouse-position-tracker:nth-child(3n - 1) {
+  left: calc(100% / 3);
+}
+
+.mouse-position-tracker:nth-of-type(3n) {
+  right: 0;
+}
+
+.mouse-position-tracker:nth-child(n + 4):nth-child(-n + 6) {
+  top: calc(100% / 3);
+}
+.mouse-position-tracker:nth-child(n + 7):nth-child(-n + 9) {
+  bottom: 0;
+}
+
+.mouse-position-tracker:nth-child(1) {
+  border-top-left-radius: 24px;
+}
+
+.mouse-position-tracker:nth-child(3) {
+  border-top-right-radius: 24px;
+}
+
+.mouse-position-tracker:nth-child(7) {
+  border-bottom-left-radius: 24px;
+}
+
+.mouse-position-tracker:nth-child(9) {
+  border-bottom-right-radius: 24px;
+}
+
+.mouse-position-tracker:nth-child(1):hover ~ .card-button {
+  --rotationX: var(--angle);
+  --rotationY: calc(var(--angle) * -1);
+  background-position: 128px 128px;
+}
+
+.mouse-position-tracker:nth-child(2):hover ~ .card-button {
+  --rotationX: var(--angle);
+  background-position: 0px 128px;
+}
+
+.mouse-position-tracker:nth-child(3):hover ~ .card-button {
+  --rotationX: var(--angle);
+  --rotationY: var(--angle);
+  background-position: -128px 128px;
+}
+
+.mouse-position-tracker:nth-child(4):hover ~ .card-button {
+  --rotationY: calc(var(--angle) * -1);
+  background-position: 128px 0px;
+}
+
+.mouse-position-tracker:nth-child(6):hover ~ .card-button {
+  --rotationY: var(--angle);
+  background-position: -128px 0px;
+}
+
+.mouse-position-tracker:nth-child(7):hover ~ .card-button {
+  --rotationY: calc(var(--angle) * -1);
+  --rotationX: calc(var(--angle) * -1);
+  background-position: 128px -128px;
+}
+
+.mouse-position-tracker:nth-child(8):hover ~ .card-button {
+  --rotationX: calc(var(--angle) * -1);
+  background-position: 0px -128px;
+}
+
+.mouse-position-tracker:nth-child(9):hover ~ .card-button {
+  --rotationY: var(--angle);
+  --rotationX: calc(var(--angle) * -1);
+  background-position: -128px -128px;
 }
 
 .header {
@@ -31,59 +155,70 @@ const { href, title, body, icon } = Astro.props as Props;
 	align-items: center;
 }
 
-.link-card {
-	list-style: none;
-	display: flex;
-	padding: 0.15rem;
-	border-radius: 0.5rem;
-	background-position: 100%;
-	transition-property: box-shadow, -webkit-box-shadow, -moz-box-shadow;
-	transition-duration: 600ms;
+
+.card-content {
+  margin: 24px;
 }
 
-.link-card:hover {
-	box-shadow: var(--card-shadow), var(--card-inner-shadow);
-	-webkit-box-shadow: var(--card-shadow), var(--card-inner-shadow);
-	-moz-box-shadow: var(--card-shadow), var(--card-inner-shadow);
-}
+.card-button {
+  --rotationX: 0deg;
+  --rotationY: 0deg;
+  --rotationZ: 0deg;
+  --angle: 10deg;
 
-.link-card > a {
-	width: 100%;
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    var(--card-background-alternate) 30%,
+    var(--card-background) 70%
+  );
+  border-radius: 24px;
+  border: 2px solid var(--card-outline);
+
+  transition: transform 500ms ease, background-position 500ms ease;
+  transform:
+    perspective(900px)
+    rotateX(var(--rotationX))
+    rotateY(var(--rotationY))
+    rotateZ(var(--rotationZ));
+
+  display: block;
 	text-decoration: none;
-	line-height: 1.4;
-	padding: 1em 1.3em;
-	border-radius: 0.35rem;
 	color: var(--text-color);
-	background-color: var(--card-background);
-	opacity: 0.8;
+	line-height: 1.4;
 }
 
-h3 {
-	margin: 0;
-	transition: color 600ms cubic-bezier(0.22, 1, 0.36, 1);
-	padding-left: 10px;
+.title {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.wip {
+  color: #c6a88e;
+  position: relative;
+  top: -8px;
+  font-size: 12pt;
+  padding-left: 8px;
 }
 
 p {
-	margin-top: 0.75rem;
-	margin-bottom: 0;
+  margin-top: 16px;
+  font-size: 12pt;
+  text-align: justify;
 }
 
-h3 span {
-	display: inline-block;
-	transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+h3, p, span {
+	transition: color 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.link-card:is(:hover, :focus-within) + .link-card::after {
-	filter: drop-shadow(0px 0px 128px #ffc400ab);
-}
 
-.link-card:is(:hover, :focus-within) h3 {
+.link-card:is(:hover, :focus-within) h3,
+.link-card:is(:hover, :focus-within) p {
 	color: var(--link-hover-color);
 }
 
-.link-card:is(:hover, :focus-within) h3 span {
-	will-change: transform;
-	transform: translateX(2px);
+.link-card:is(:hover, :focus-within) span {
+  color: #f4c960;
 }
 </style>

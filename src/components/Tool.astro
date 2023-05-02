@@ -1,0 +1,65 @@
+---
+
+import StackContainer from './containers/StackContainer.astro';
+
+export interface Props {
+  title: string;
+	href: string;
+  icon: string;
+	light_icon: string;
+}
+
+const { title, href, light_icon, icon } = Astro.props as Props;
+---
+
+<div class="tool-icon">
+  <a title={title} href={href} target="_blank">
+    <StackContainer class="icons">
+      <img class="light" src={light_icon} height="40" width="40"/>
+      <img class="dark" src={icon} height="40" width="40"/>
+    </StackContainer>
+  </a>
+</div>
+
+<style>
+.tool-icon {
+  height: 64px;
+  width: 64px;
+  border-radius: 16px;
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  justify-content: center;
+}
+
+.dark {
+  opacity: 0;
+  transition: opacity 200ms linear, width 100ms linear, height 100ms linear;
+}
+
+.light {
+  transition: width 100ms linear, height 100ms linear;
+}
+
+.tool-icon a {
+  display: flex;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.tool-icon a * {
+  margin: auto;
+}
+
+.tool-icon:hover .dark {
+  opacity: 100%;
+}
+
+.tool-icon:is(:hover) .dark,
+.tool-icon:is(:hover) .light{
+  width: 46px;
+  height: 46px;
+}
+</style>
+

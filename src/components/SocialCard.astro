@@ -1,0 +1,72 @@
+---
+import StackContainer from '../components/containers/StackContainer.astro';
+
+export interface Props {
+	type: string;
+  name: string;
+  url: string;
+}
+
+const { type, name, url } = Astro.props as Props;
+---
+
+<a class="card" href={url} target="_blank">
+  <StackContainer>
+    {<img src=`assets/icons/${type}.svg`/>}
+    {<img class="dim" src=`assets/icons/${type}.svg`/>}
+  </StackContainer>
+  <p class="name">{name}</p>
+</div>
+
+<style>
+
+.card {
+  --gradient-primary: hsla(0, 0%, 7%, 20%);
+  --gradient-secondary: hsla(0, 0%, 6%, 100%);
+
+  display: inline-block;
+  width: 175px;
+  height: 200px;
+  border: 2px solid hsl(0, 0%, 10%);
+  border-radius: 24px;
+  background: linear-gradient(
+    0deg,
+    var(--gradient-primary) 0%,
+    var(--gradient-secondary) 50%
+  );
+  text-align: center;
+  transition: transform 300ms ease, color 300ms ease;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ababab;
+}
+
+.card:hover {
+  color: white;
+  transform: scale(105%);
+}
+
+.card:hover .dim {
+  opacity: 0%;
+}
+
+.dim {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(12%) saturate(8%) hue-rotate(324deg) brightness(92%) contrast(86%);
+  transition: opacity 300ms ease;
+}
+
+.name {
+  font-size: 11pt;
+}
+
+.name {
+  margin: 24px auto;
+}
+
+img {
+  margin: 0 auto;
+  margin-top: 36px;
+}
+
+</style>
+

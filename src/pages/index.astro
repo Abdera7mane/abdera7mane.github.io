@@ -1,69 +1,228 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import SocialCard from '../components/SocialCard.astro';
+import Tool from '../components/Tool.astro';
 ---
 
 <Layout title="Abdera7mane's profile">
 	<main>
-		<h1 id="projects">My projects</h1>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://github.com/Abdera7mane/cordot"
-				title="Cordot"
-				icon="assets/projects/cordot/icon.png"
-				body="Discord API wrapper for Godot Engine written in GDScript language."
-			/>
-			<Card
-				href="https://github.com/Abdera7mane/godot-buildpack"
-				title="Godot buildpack"
-				icon="assets/projects/godot-buildpack/icon.png"
-				body="Cloud Native Buildpack for Godot projects."
-			/>
-			<Card
-				href="https://github.com/Abdera7mane/godot-project-statistics"
-				title="Godot project statistics"
-				icon="assets/projects/godot-project-statistics/icon.png"
-				body="Display code base statistics of a Godot project."
-			/>
-		</ul>
-	</main>
+    <div class="logo-frame">
+      <img class="logo" src="assets/logo.svg"/>
+    </div>
+    <div class="about">
+      <p>
+        <br>
+        I am a self-proclaimed wheel reinventor,
+        involved in <span class="text-gradient">software development</span>
+        and <span class="text-gradient">graphic design</span>.
+        I take pride in my craft.
+      </p>
+    </div>
+    <section class="projects">
+      <h2>PROJECTS</h2>
+      <ul role="list" class="link-card-grid">
+        <Card title="Cordot"
+              icon="assets/projects/cordot/icon.svg"
+              href="https://github.com/abdera7mane/cordot"
+              body="Wrapper around Discord Websocket & REST API implemented in GDScript"
+        />
+        <Card title="Godot Buildpack"
+              icon="assets/projects/godot-buildpack/icon.svg"
+              href="https://github.com/abdera7mane/godot-buildpack"
+              body="Cloud Native Buildpack (CNB) to serve Godot applications on PaaS services"
+        />
+        <Card title="AlpsWM"
+              icon="assets/projects/alpswm/icon.svg"
+              body="Composit window manager for X11 with a main focus on configuration ease to design eye candy desktops"
+              wip=true;
+        />
+        <Card title="Project Statstics"
+              icon="assets/projects/godot-project-statistics/icon.svg"
+              href="https://github.com/abdera7mane/godot-project-statistics"
+              body="Displays code base statistics in an elegant and easy to navigate GUI for Godot projects"
+        />
+        <Card title="Simple HTTP Client"
+              icon="assets/projects/godot-simple-http-client/icon.svg"
+              href="https://github.com/abdera7mane/Godot-SimpleHTTPClient"
+              body="Simple HTTP client implementation with connection pooling and streaming support"/>
+      </ul>
+    </section>
+    <section class="tools">
+      <h2>TOOLS I USE</h2>
+      <div class="tools-container">
+        <Tool light_icon="assets/icons/alpine_light.svg"
+              icon="assets/icons/alpine.svg"
+              title="Alpine Linux"
+              href="https://alpinelinux.org/"/>
+        <Tool light_icon="assets/icons/cpp_light.svg"
+              icon="assets/icons/cpp.svg"
+              title="C++"
+              href="https://isocpp.org/"/>
+        <Tool light_icon="assets/icons/godot_light.svg"
+              icon="assets/icons/godot.svg"
+              title="Godot Engine"
+              href="https://godotengine.org/"/>
+        <Tool light_icon="assets/icons/python_light.svg"
+              icon="assets/icons/python.svg"
+              title="Python"
+              href="https://python.org/"/>
+        <Tool light_icon="assets/icons/ferris_light.svg"
+              icon="assets/icons/ferris.svg"
+              title="CrabLang"
+              href="https://rust-lang.org/"/>
+        <Tool light_icon="assets/icons/inkscape_light.svg"
+              icon="assets/icons/inkscape.svg"
+              title="Inkscape"
+              href="https://inkscape.org/"/>
+        <Tool light_icon="assets/icons/lua_light.svg"
+              icon="assets/icons/lua.svg"
+              title="Lua"
+              href="https://lua.org/"/>
+        <Tool light_icon="assets/icons/docker_light.svg"
+              icon="assets/icons/docker.svg"
+              title="Docker/Podman"
+              href="https://docker.com/"/>
+      </div>
+    </section>
+    <section class="socials">
+      <h2>SOCIALS</h2>
+      <div class="socials-grid">
+        <SocialCard type="github"
+                    name="@Abdera7mane"
+                    url="https://github.com/abdera7mane/"/>
+        <SocialCard type="discord"
+                    name="Abdera7mane#8910"/>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-h1 {
-	margin: 2rem 0;
+:root {
+  --inner-light: hsla(20, 6%, 7%, 90%) 0%, transparent 80%;
+  --light--size: 600px 128px;
+  --bottom-light: radial-gradient(
+      var(--light--size) at center bottom,
+      var(--inner-light)
+    );
+  --top-light: radial-gradient(
+      var(--light--size) at center top,
+      var(--inner-light)
+    );
 }
-
 main {
-	margin: auto;
-	padding: 1em;
-	max-width: 720px;
+  position: relative;
 }
 
-h1 {
-	text-align: center;
+.logo-frame {
+  display: block;
+  position: absolute;
+  background-image: url('../assets/logo_frame.svg');
+  height: 112px;
+  width: 256px;
+  top: -111px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
-.instructions {
-	line-height: 1.6;
-	margin: 1rem 0;
-	background: #4f39fa;
-	padding: 1rem;
-	border-radius: 0.4rem;
-	color: var(--color-bg);
+.logo {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 40px auto;
 }
 
-.instructions code {
-	font-size: 0.875em;
-	border: 0.1em solid var(--color-border);
-	border-radius: 4px;
-	padding: 0.15em 0.25em;
+.about {
+  background-color: hsl(0, 0%, 4%);
+  background-image: var(--top-light), var(--bottom-light);
+  border: 2px solid;
+  border-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 16%, 25%) 0%,
+    hsla(0, 0%, 16%, 0%) 86%,
+    hsla(0, 0%, 16%, 3%) 100%
+  ) 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  min-height: 440px;
+}
+
+.about p {
+  font-weight: 600;
+  font-size: 22pt;
+  font-style: bold;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 560px;
+  line-height: 48px;
+}
+
+@media screen and (max-width: 670px) {
+  .about {
+    min-height: 360px;
+  }
+
+  .about p {
+    font-size: 20pt;
+    max-width: 480px;
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  .about {
+    min-height: 360px;
+  }
+
+  .about p {
+    font-size: 16pt;
+    max-width: 380px;
+    line-height: 36px;
+  }
+
+  .tools-container {
+    max-width: 320px;
+  }
+}
+
+.projects {
+  padding-bottom: 60px;
 }
 
 .link-card-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-	gap: 1rem;
-	padding: 0;
+	gap: 32px;
+}
+
+.link-card-grid {
+  max-width: 1280px;
+}
+
+.tools-container,
+.link-card-grid,
+.socials-grid {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.tools-container,
+.socials-grid {
+  gap: 16px;
+}
+
+.tools {
+  background-color: hsl(0, 0%, 6%);
+  padding-bottom: 60px;
+}
+
+.tools h2 {
+  padding-bottom: 30px;
 }
 </style>

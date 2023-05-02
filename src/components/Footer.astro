@@ -1,26 +1,34 @@
 <footer>
-    <p>Copyright &copy; {new Date().getFullYear()} Abdera7mane </p>
+    <p>Copyright &copy; <span id="year"></span> Abdera7mane </p>
 </footer>
 
 <style>
 :root {
-    --footer-background: #0d0a0b;
+  --footer-gradient: radial-gradient(
+      50% 50% at center top,
+      hsla(20, 6%, 10%, 60%) 0%,
+      transparent 100%
+    );
 }
+
 footer {
-    color: #bcb8b1;
-    background-color: var(--footer-background);
-    display: flex;
-    padding: 32px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
+  display: flex;
+  background-image: var(--footer-gradient);
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
 }
 
 p {
-    font-size: 16px;
+  font-size: 16px;
 }
 </style>
+
+<script>
+document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>

@@ -1,0 +1,13 @@
+<div class="stack"><slot/></div>
+
+<style>
+.stack {
+  display: grid;
+}
+
+:global(.stack > *) {
+  grid-column: 1;
+  grid-row: 1;
+}
+</style>
+
